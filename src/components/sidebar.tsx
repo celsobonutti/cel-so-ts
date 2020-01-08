@@ -50,7 +50,7 @@ export default () => {
         </li>
       </Social>
       <Text>
-        Hey, I'm Celso! I'm developer from Salvador, Bahia. I've created this
+        Hey, I'm Celso! I'm developer from Salvador, Bahia. I created this
         blog so I can talk about random stuff I like, study or like and study.
         <br />I <strong>love</strong> memes btw.
       </Text>
