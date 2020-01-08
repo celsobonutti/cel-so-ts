@@ -1,12 +1,16 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Kyle Matthews`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `cel-so`,
+    author: `Celso Bonutti Filho`,
+    description: `a.k.a. Celso's blog`,
+    siteUrl: `https://cel.so/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `celsobonutti`,
+      linkedin: `celsobonutti`,
+      github: `CelsoBonutti`,
+      email: `celso.bonuttif@gmail.com`
     },
   },
   plugins: [
@@ -17,6 +21,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -76,8 +81,6 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
       },
     },
     {
@@ -87,4 +90,4 @@ module.exports = {
       },
     },
   ],
-}
+};
