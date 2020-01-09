@@ -40,7 +40,6 @@ interface Props {
 
 const BlogPostTemplate = ({ data, pageContext }: Props) => {
   const post = data.mdx;
-  const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
   return (
@@ -84,6 +83,8 @@ const GoHome = styled(Link)`
 
   > span {
     margin-left: 0.25rem;
+    color: ${props => props.theme.colors.secondary};
+    font-weight: 700;
   }
 `;
 

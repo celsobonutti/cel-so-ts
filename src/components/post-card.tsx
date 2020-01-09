@@ -48,7 +48,7 @@ const PostCard = ({ post: { frontmatter, excerpt, fields } }: Props) => {
 const Title = styled.h3`
   margin-bottom: ${rhythm(1 / 4)};
   font-weight: 700;
-  color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.secondary} !important;
 `;
 
 const Container = styled.div`
