@@ -7,5 +7,5 @@ export const colors = {
 };
 
 export const shadows = {
-  dark: '2px 2px 8px #151515',
+  dark: '2px 2px 4px #151515',
 };

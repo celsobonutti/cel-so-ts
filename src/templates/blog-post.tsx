@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { Home } from 'react-feather';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
+import { colors } from '../utils/theme';
 
 interface Post {
   frontmatter: {
@@ -47,32 +50,15 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <GoHome to="/">
+        <Home />
+        <span>GO HOME, YOU'RE DRUNK</span>
+      </GoHome>
       <h1>{post.frontmatter.title}</h1>
-      <p
-        style={{
-          ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: rhythm(1),
-          marginTop: rhythm(-1),
-        }}
-      >
-        {post.frontmatter.date}
-      </p>
+      <Date>{post.frontmatter.date}</Date>
       <MDXRenderer>{post.body}</MDXRenderer>
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
+      <Hairline />
+      <Navigation>
         <li>
           {previous && (
             <Link to={`${previous.fields.slug}`} rel="prev">
@@ -87,10 +73,39 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
             </Link>
           )}
         </li>
-      </ul>
+      </Navigation>
     </Layout>
   );
 };
+
+const GoHome = styled(Link)`
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0 1rem;
+
+  > span {
+    margin-left: 0.25rem;
+  }
+`;
+
+const Date = styled.small`
+  display: block;
+  margin-bottom: ${rhythm(1)};
+  margin-top: ${rhythm(-1)};
+`;
+
+const Navigation = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`;
+
+const Hairline = styled.hr`
+  margin-bottom: ${rhythm(1)};
+  border-top: 1px solid ${colors.text};
+`;
 
 export default BlogPostTemplate;
 

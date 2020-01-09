@@ -40,6 +40,7 @@ const Blog = ({ data }: Props) => {
 const PostContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
   grid-gap: 1rem;
 `;
 
