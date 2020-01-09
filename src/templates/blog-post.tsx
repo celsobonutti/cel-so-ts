@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
-import { colors } from '../utils/theme';
 
 interface Post {
   frontmatter: {
@@ -104,7 +103,7 @@ const Navigation = styled.ul`
 
 const Hairline = styled.hr`
   margin-bottom: ${rhythm(1)};
-  border-top: 1px solid ${colors.text};
+  border-top: 1px solid ${props => props.theme.colors.text};
 `;
 
 export default BlogPostTemplate;

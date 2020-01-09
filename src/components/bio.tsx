@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { Linkedin, Twitter, Mail, GitHub } from 'react-feather';
 
 import { rhythm } from '../utils/typography';
-import { colors, shadows } from '../utils/theme';
 
 export default () => {
   const data = useStaticQuery(bioQuery);
@@ -20,11 +19,9 @@ export default () => {
           margin: rhythm(1 / 2),
           minWidth: 50,
           borderRadius: `100%`,
-          boxShadow: shadows.dark,
         }}
         imgStyle={{
           borderRadius: `100%`,
-          boxShadow: shadows.dark,
         }}
       />
       <Social>
@@ -39,7 +36,10 @@ export default () => {
           </a>
         </li>
         <li>
-          <a target="_blank" href={`https://linkedin.com/${social.linkedin}`}>
+          <a
+            target="_blank"
+            href={`https://linkedin.com/in/${social.linkedin}`}
+          >
             <Linkedin />
           </a>
         </li>
@@ -90,7 +90,7 @@ const Wrapper = styled.div`
 const Text = styled.span`
   max-width: 300px;
   text-align: left;
-  color: ${colors.text};
+  color: ${props => props.theme.colors.text};
 `;
 
 const Social = styled.ul`

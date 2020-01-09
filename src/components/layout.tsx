@@ -1,10 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import styled from 'styled-components';
+import { ThemeManagerContext } from 'gatsby-styled-components-dark-mode';
+import { Moon, Sun } from 'react-feather';
 
 import Bio from './bio';
 import { device } from '../utils/layout';
 import { rhythm } from '../utils/typography';
-import { colors } from '../utils/theme';
 
 interface Props {
   children: ReactNode;
@@ -17,8 +18,15 @@ interface WrapperProps {
 }
 
 const Layout = ({ children, title, subtitle }: Props) => {
+  const themeContext = useContext(ThemeManagerContext);
+
   return (
     <Wrapper hasHeader={!!title}>
+      <Toggler onClick={themeContext.toggleDark}>
+        {themeContext.isDark 
+        ? (<Sun />)
+        : (<Moon />)}
+      </Toggler>
       {title && (
         <Header>
           <h1>{title}</h1>
@@ -30,8 +38,10 @@ const Layout = ({ children, title, subtitle }: Props) => {
         <Bio />
       </Info>
       <Footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
+        <span>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+        </span>
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </Footer>
     </Wrapper>
@@ -40,7 +50,7 @@ const Layout = ({ children, title, subtitle }: Props) => {
 
 const Wrapper = styled.div<WrapperProps>`
   min-height: 100vh;
-  background-color: ${colors.background};
+  background-color: ${props => props.theme.colors.background};
 
   display: grid;
 
@@ -63,14 +73,30 @@ const Wrapper = styled.div<WrapperProps>`
     grid-template-rows: 150px 1fr 100px;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    color: ${props => props.theme.colors.headline}
+  }
+
+  p, span, small {
+    color: ${props => props.theme.colors.text}
+  }
+
   a {
-    color: ${colors.secondary};
+    color: ${props => props.theme.colors.secondary};
     text-decoration: none;
 
     * {
       color: parent;
     }
   }
+`;
+
+const Toggler = styled.div`
+  color: ${props => props.theme.colors.secondary};
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
 `;
 
 const Header = styled.div`
@@ -85,12 +111,12 @@ const Header = styled.div`
 const Info = styled.div`
   margin: 1rem 1rem;
   padding: 1rem;
-  border-top: 3px double ${colors.primary};
+  border-top: 3px double ${props => props.theme.colors.primary};
 
   @media ${device.laptop} {
     margin: 1rem 0;
     border-top: none;
-    border-right: 3px double ${colors.primary};
+    border-right: 3px double ${props => props.theme.colors.primary};
   }
   grid-area: info;
 `;
@@ -102,7 +128,7 @@ const Content = styled.div`
 
 const Footer = styled.footer`
   margin: 0 1rem;
-  border-top: 1px solid ${colors.primary};
+  border-top: 1px solid ${props => props.theme.colors.primary};
   max-height: 100px;
   text-align: center;
   padding: 24px;

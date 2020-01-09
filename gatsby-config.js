@@ -10,7 +10,7 @@ module.exports = {
       twitter: `celsobonutti`,
       linkedin: `celsobonutti`,
       github: `CelsoBonutti`,
-      email: `celso.bonuttif@gmail.com`
+      email: `celso.bonuttif@gmail.com`,
     },
   },
   plugins: [
@@ -87,6 +87,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: require(`${__dirname}/src/theme.js`).lightTheme,
+        dark: require(`${__dirname}/src/theme.js`).darkTheme,
       },
     },
   ],
