@@ -59,7 +59,7 @@ const Container = styled.div`
   justify-content: space-between;
   height: 100%;
 
-  h3: {
+  > h3: {
     color: ${props => props.theme.colors.headline};
   }
 

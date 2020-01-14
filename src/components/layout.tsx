@@ -73,7 +73,7 @@ const Wrapper = styled.div<WrapperProps>`
     grid-template-rows: 150px 1fr 100px;
   }
 
-  h1, h2, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: ${props => props.theme.colors.headline}
   }
 
