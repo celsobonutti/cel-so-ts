@@ -23,9 +23,7 @@ const Layout = ({ children, title, subtitle }: Props) => {
   return (
     <Wrapper hasHeader={!!title}>
       <Toggler onClick={themeContext.toggleDark}>
-        {themeContext.isDark 
-        ? (<Sun />)
-        : (<Moon />)}
+        {themeContext.isDark ? <Sun /> : <Moon />}
       </Toggler>
       {title && (
         <Header>
@@ -71,6 +69,14 @@ const Wrapper = styled.div<WrapperProps>`
     grid-template-columns: 300px 1fr;
 
     grid-template-rows: 150px 1fr 100px;
+  }
+
+  transition: color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+
+  * {
+    transition: color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
   }
 
   h1, h2, h4, h5, h6 {
