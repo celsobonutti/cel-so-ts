@@ -71,14 +71,6 @@ const Wrapper = styled.div<WrapperProps>`
     grid-template-rows: 150px 1fr 100px;
   }
 
-  transition: color .2s ease-in-out;
-  transition: background-color .2s ease-in-out;
-
-  * {
-    transition: color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
-  }
-
   h1, h2, h4, h5, h6 {
     color: ${props => props.theme.colors.headline}
   }
