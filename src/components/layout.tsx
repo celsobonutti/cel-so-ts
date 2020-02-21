@@ -79,6 +79,14 @@ const Wrapper = styled.div<WrapperProps>`
     transition: background-color .2s ease-in-out;
   }
 
+  .vscode-highlight {
+    max-width: 80vw;
+
+    span {
+      display: inline-block;
+    }
+  }
+
   h1, h2, h4, h5, h6 {
     color: ${props => props.theme.colors.headline}
   }
