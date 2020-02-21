@@ -6,7 +6,7 @@ description: How to setup a simple ReasonReact app using Parcel and Bucklescript
 
 >Please read this in a computer, the code blocks are breaking the responsiveness. I'll fix this ASAP.
 
-I would like to start this by saying that I'm obviously no expert on either ReasonML or Javascript bundlers: for the last 2 years I've been using the (great) create-react-app boilerplate and never thought on moving away... until now. Javascript and Typescript also always met my needs, until JSs constant unexpected behavior and TSs real bad type inference started bothering me for real.
+I would like to start this by saying that I'm obviously no expert on either ReasonML or Javascript bundlers: for the last 2 years I've been using the (great) create-react-app boilerplate and never thought on moving away... until now. Javascript and Typescript also always met my needs, until JS's constant unexpected behavior and TS's really bad type inference started bothering me for real.
 
 I'd also like to tell you that I am, by no means, a expert on front-end development. I've started on 2017 and, for almost an year, worked exclusively with ASP.NET Webforms and Django templates.
 
