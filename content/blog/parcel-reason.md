@@ -75,7 +75,7 @@ Explaining how to write a basic HTML5 file is out of the scope of this post, but
 > Wait... WHAT??? Are you telling me that I can just import my Reason file into HTML????
 
 That was _exactly_ what I thought at the time I read the Parcel documentation on ReasonML, and... it works!
-I mean, if you run `npm start` right now, you'll only see a white screen, but we're going to take care of that.
+I mean, try to run `npm start` right now and go to http://localhost:3000. What do you see? Only a white screen, right? Let's take care of that.
 
 Let's start by installing our dependencies, so run `npm i -S react react-dom reason-react`. If you try to run it right now, you'll get an error related to `bsb`. Of course! How could we run ReasonML on the browser without [bucklescript](https://bucklescript.github.io/)?
 Just run `npm i -D bs-platform`, create a `bsconfig.json` in your project's root directory and put the following content in it:
