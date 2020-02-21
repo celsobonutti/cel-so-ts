@@ -33,7 +33,7 @@ With that said, let's dive into the
 
 Let's start by creating a folder, then initializing a npm project. Name it whatever you want, I'll name it "nice-memes"!
 
-```
+```bash
 mkdir nice-memes
 cd nice-memes
 npm init -y
@@ -41,7 +41,7 @@ npm init -y
 
 Alright, now that we have `package.json`, let's install Parcel as a dev dependency:
 
-```
+```bash
 npm i -D parcel-bundler
 ```
 
@@ -106,9 +106,9 @@ Just run `npm i -D bs-platform`, create a `bsconfig.json` in your project's root
 }
 ```
 
-One more time, try to `npm start` your way to glory! You'll notice that it runs, your Reason file is built, and... you still have a blank page. Because we didn't write anything on the `Index.re`, so open it and be ready for some exciting ReasonReact action, putting the following code in it:
+One more time, try to `npm start` your way into glory! You'll notice that it runs, your Reason file is built, and... you still have a blank page. Because we didn't write anything on the `Index.re`, so open it and be ready for some exciting ReasonReact action, putting the following code in it:
 
-```reason
+```javascript
 module App = {
   [@react.component]
   let make = () => {
