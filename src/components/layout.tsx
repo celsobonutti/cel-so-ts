@@ -79,6 +79,10 @@ const Wrapper = styled.div<WrapperProps>`
     transition: background-color .2s ease-in-out;
   }
 
+  code {
+    background-color: rgba(30, 30, 30, 0.6);
+  }
+
   h1, h2, h4, h5, h6 {
     color: ${props => props.theme.colors.headline}
   }
@@ -99,7 +103,7 @@ const Wrapper = styled.div<WrapperProps>`
 
 const Toggler = styled.div`
   color: ${props => props.theme.colors.secondary};
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   cursor: pointer;
