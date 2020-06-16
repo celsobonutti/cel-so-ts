@@ -2,6 +2,7 @@ import React, { ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 import { ThemeManagerContext } from 'gatsby-styled-components-dark-mode';
 import { Moon, Sun } from 'react-feather';
+import '../css/index.css';
 
 import Bio from './bio';
 import { device } from '../utils/layout';

@@ -1,0 +1,17 @@
+.rainbow {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-clip: text;
+  color: transparent !important;
+  font-size: 3em;
+  line-height: initial;
+  text-align: center;
+}

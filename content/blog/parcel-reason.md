@@ -17,14 +17,7 @@ With that said, let's dive into the
     marginBottom: "1.56rem"
   }}
 >
-  <span style={{
-    backgroundImage: "linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)",
-    backgroundClip: "text",
-    color: "transparent",
-    fontSize: "3em",
-    lineHeight: "initial",
-    textAlign: "center",
-  }}>
+  <span className="rainbow">
     Wonderful World of ReasonML
   </span>
 </div>
@@ -97,9 +90,7 @@ Just run `npm i -D bs-platform`, create a `bsconfig.json` in your project's root
   ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": [
-    "reason-react"
-  ],
+  "bs-dependencies": ["reason-react"],
   "refmt": 3
 }
 ```
